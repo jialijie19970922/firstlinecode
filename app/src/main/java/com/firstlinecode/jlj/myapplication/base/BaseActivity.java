@@ -1,4 +1,4 @@
-package com.firstlinecode.jlj.myapplication.activity;
+package com.firstlinecode.jlj.myapplication.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

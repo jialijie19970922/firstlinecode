@@ -11,36 +11,60 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.firstlinecode.jlj.myapplication.R;
+import com.firstlinecode.jlj.myapplication.base.BaseActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
+
+
+    /**
+     * 知识点：1.activity各种跳转方式
+     *        2.打开网页的方式
+     *        3.布局中的各种属性使用与记录
+     *        4.recycleview的使用
+     *        5.
+     *
+     * @param savedInstanceState
+     */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.v("myMessage","MainActivity");
-        Log.d("myMessage","MainActivity");
-        Log.i("myMessage","MainActivity");
-        Log.w("myMessage","MainActivity");
-        Log.e("myMessage","MainActivity");
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(this);
+        Log.v("myMessage", "MainActivity");
+        Log.d("myMessage", "MainActivity");
+        Log.i("myMessage", "MainActivity");
+        Log.w("myMessage", "MainActivity");
+        Log.e("myMessage", "MainActivity");
+        Button button1 = findViewById(R.id.button1);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
+        Button button4 = findViewById(R.id.button4);
+        Button button5 = findViewById(R.id.button5);
+        Button button6 = findViewById(R.id.button6);
+        Button button7 = findViewById(R.id.button7);
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main,menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.add_itme:
-                Toast.makeText(this,"additem",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "additem", Toast.LENGTH_LONG).show();
                 break;
             case R.id.remove_itme:
-                Toast.makeText(this,"removeitem",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "removeitem", Toast.LENGTH_LONG).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -48,14 +72,33 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-//        startActivity(new Intent(this,SecondActivity.class));// 显示intent
-//        startActivity(new Intent("com.firstlinecode.jlj.myapplication"));// 隐式intent
-        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://www.baidu.com")));// 跳转至网页显示
+        switch (v.getId()) {
+            case R.id.button1:
+                startActivity(new Intent(this, SecondActivity.class));// 显示intent
+                break;
+            case R.id.button2:
+                startActivity(new Intent("com.firstlinecode.jlj.myapplication"));// 隐式intent
+                break;
+            case R.id.button3:
+                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://www.baidu.com")));// 跳转至网页显示与选择跳转至ACTION_VIEW界面
+                break;
+            case R.id.button4:
+
+                break;
+            case R.id.button5:
+
+                break;
+            case R.id.button6:
+                startActivity(new Intent(this, TwoLevelListActivity.class));
+                break;
+            case R.id.button7:
+                startActivity(new Intent(this, FlowActivity.class));
+                break;
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
     }
 }
