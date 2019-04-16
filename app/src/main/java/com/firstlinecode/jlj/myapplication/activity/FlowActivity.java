@@ -30,6 +30,10 @@ public class FlowActivity extends AppCompatActivity {
 
         initData();
 
+        flowView();
+    }
+
+    private void flowView() {
         for (int i = 0; i < datas.size(); i++) {
             View view = View.inflate(this, R.layout.flow_itme_view, null);
             final LinearLayout lineatLayout = view.findViewById(R.id.flow_lin);
@@ -77,6 +81,9 @@ public class FlowActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     FlowUtils.showToast(FlowActivity.this, view.getId() + "");
+                    flowLayout.removeAllViews();
+                    datas.remove(view.getId());
+                    flowView();
                 }
             });
 
