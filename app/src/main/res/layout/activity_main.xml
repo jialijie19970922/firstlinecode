@@ -60,13 +60,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="张玉瑾條目詳情置顶需求"/>
+                android:text="條目詳情置顶需求"/>
             <Button
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:text="张玉瑾频道管理布局"/>
+                android:text="频道管理布局"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
