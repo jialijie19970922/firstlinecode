@@ -67,6 +67,12 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:text="频道管理布局"/>
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="发送一条广播检测当前网络"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
