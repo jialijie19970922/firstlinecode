@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.firstlinecode.jlj.myapplication">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,12 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.datapersistence.ContentProviderStorageActivity"></activity>
+        <activity android:name=".activity.datapersistence.LietPalStorageActivity" />
+        <activity android:name=".activity.datapersistence.SQLiteStorageActivity" />
+        <activity android:name=".activity.datapersistence.SharedPreferencesStorageActivity" />
+        <activity android:name=".activity.datapersistence.FileStoreActivity" />
+        <activity android:name=".activity.datapersistence.DatapersistenceActivity" />
+
         <receiver
             android:name=".broadcasts.NetworkChangeReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.firstlinecode.jlj.myapplication.broadcasts.NetworkChangeReceiver"/><!-- 接收一条值为name的广播 -->
+                <action android:name="com.firstlinecode.jlj.myapplication.broadcasts.NetworkChangeReceiver" /> <!-- 接收一条值为name的广播 -->
             </intent-filter>
         </receiver>
 

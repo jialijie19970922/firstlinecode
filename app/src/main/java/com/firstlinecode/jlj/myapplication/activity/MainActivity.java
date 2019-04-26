@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.firstlinecode.jlj.myapplication.R;
+import com.firstlinecode.jlj.myapplication.activity.datapersistence.DatapersistenceActivity;
 import com.firstlinecode.jlj.myapplication.base.BaseActivity;
 import com.firstlinecode.jlj.myapplication.broadcasts.NetworkChangeReceiver;
 
@@ -59,6 +60,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Button button6 = findViewById(R.id.button6);
         Button button7 = findViewById(R.id.button7);
         Button button8 = findViewById(R.id.button8);
+        Button button9 = findViewById(R.id.button9);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
@@ -67,6 +69,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         button6.setOnClickListener(this);
         button7.setOnClickListener(this);
         button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
     }
 
     @Override
@@ -115,6 +118,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.button8:// 发送一条广播检测当前网络
                 Intent intent = new Intent("com.firstlinecode.jlj.myapplication.broadcasts.NetworkChangeReceiver");
                 sendBroadcast(intent);
+                break;
+            case R.id.button9:
+                startActivity(new Intent(this, DatapersistenceActivity.class));
                 break;
         }
     }
